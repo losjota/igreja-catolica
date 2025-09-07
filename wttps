@@ -1,0 +1,4170 @@
+# Site da Igreja Católica - Milagres Eucarísticos e São Carlos Acutis
+
+Um site moderno e responsivo dedicado à fé católica, com foco especial nos milagres eucarísticos e na vida inspiradora de São Carlos Acutis.
+
+## 🌟 Características
+
+- **Design Moderno**: Interface limpa e elegante com cores inspiradas na tradição católica
+- **Totalmente Responsivo**: Funciona perfeitamente em dispositivos móveis, tablets e desktops
+- **Navegação Intuitiva**: Menu hambúrguer para mobile e navegação suave entre seções
+- **Animações Suaves**: Efeitos visuais que melhoram a experiência do usuário
+- **Acessibilidade**: Código otimizado para leitores de tela e navegação por teclado
+
+## 📱 Seções do Site
+
+### 1. **Igreja Católica**
+- História da Igreja
+- Doutrina católica
+- Universalidade da fé
+
+### 2. **Milagres Eucarísticos**
+- Milagre de Lanciano (Itália - 700 d.C.)
+- Milagre de Buenos Aires (Argentina - 1996)
+- Milagre de Tixtla (México - 2006)
+- Explicação sobre a Eucaristia
+
+### 3. **São Carlos Acutis**
+- Biografia completa
+- Virtudes e características de santidade
+- Exposição dos Milagres Eucarísticos
+- Frases inspiradoras
+
+### 4. **Galeria**
+- Espaço para imagens relacionadas à fé católica
+- Layout em grid responsivo
+
+### 5. **Contato**
+- Formulário de contato funcional
+- Informações de contato
+- Links para redes sociais
+
+## 🛠️ Tecnologias Utilizadas
+
+- **HTML5**: Estrutura semântica e acessível
+- **CSS3**: Design moderno com Flexbox e Grid
+- **JavaScript**: Interatividade e animações
+- **Font Awesome**: Ícones vetoriais
+- **Google Fonts**: Tipografia elegante (Playfair Display + Open Sans)
+
+## 🎨 Paleta de Cores
+
+- **Primária**: #8B4513 (Marrom escuro)
+- **Secundária**: #DAA520 (Dourado)
+- **Destaque**: #B8860B (Dourado escuro)
+- **Texto**: #2C2C2C (Cinza escuro)
+- **Fundo**: #F8F9FA (Cinza claro)
+
+## 📁 Estrutura de Arquivos
+
+```
+├── index.html          # Página principal
+├── styles.css          # Estilos CSS
+├── script.js           # JavaScript
+└── README.md           # Documentação
+```
+
+## 🚀 Como Usar
+
+1. **Download**: Baixe todos os arquivos para uma pasta
+2. **Abertura**: Abra o arquivo `index.html` em qualquer navegador moderno
+3. **Navegação**: Use o menu para navegar entre as seções
+4. **Responsividade**: Teste em diferentes tamanhos de tela
+
+## 📱 Recursos Mobile
+
+- Menu hambúrguer responsivo
+- Layout adaptativo para telas pequenas
+- Touch-friendly (botões e links otimizados para toque)
+- Performance otimizada para dispositivos móveis
+
+## ♿ Acessibilidade
+
+- Navegação por teclado
+- Suporte a leitores de tela
+- Contraste adequado de cores
+- Textos alternativos para imagens
+- Estrutura semântica HTML5
+
+## 🔧 Personalização
+
+### Cores
+Edite as variáveis CSS no arquivo `styles.css`:
+```css
+:root {
+    --primary-color: #8B4513;
+    --secondary-color: #DAA520;
+    --accent-color: #B8860B;
+    /* ... outras variáveis */
+}
+```
+
+### Conteúdo
+- Edite o texto diretamente no arquivo `index.html`
+- Adicione novas seções seguindo a estrutura existente
+- Modifique as informações de contato conforme necessário
+
+### Imagens
+- Substitua os placeholders da galeria por imagens reais
+- Adicione `data-src` para lazy loading
+- Otimize as imagens para web (WebP recomendado)
+
+## 📈 Performance
+
+- CSS e JavaScript minificados (recomendado para produção)
+- Lazy loading para imagens
+- Debounce em eventos de scroll
+- Animações otimizadas com `transform` e `opacity`
+
+## 🌐 Compatibilidade
+
+- **Navegadores**: Chrome, Firefox, Safari, Edge (versões modernas)
+- **Dispositivos**: Desktop, tablet, mobile
+- **Resoluções**: 320px até 4K
+
+## 📞 Suporte
+
+Para dúvidas ou sugestões sobre o site, entre em contato através do formulário na seção "Contato".
+
+## 🙏 Agradecimentos
+
+Este site foi criado com amor e respeito pela fé católica, inspirado na vida de São Carlos Acutis e nos milagres eucarísticos que testemunham a presença real de Cristo na Eucaristia.
+
+---
+
+**"A Eucaristia é a minha estrada para o céu"** - São Carlos Acutis
+
+// Navegação mobile
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+// Fechar menu ao clicar em um link
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
+
+// Scroll suave para âncoras
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Efeito de transparência no header ao fazer scroll
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
+    } else {
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+    }
+});
+
+// Animação de entrada dos elementos
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observar elementos para animação
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.card, .milagre-card, .gallery-item, .carlos-content, .contact-content');
+    
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+});
+
+// Formulário de contato
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Simular envio do formulário
+        const submitBtn = this.querySelector('.btn-primary');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Enviando...';
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+            submitBtn.textContent = 'Mensagem Enviada!';
+            submitBtn.style.background = '#28a745';
+            
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.background = '';
+                this.reset();
+            }, 2000);
+        }, 1500);
+    });
+}
+
+// Efeito parallax no hero
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        const rate = scrolled * -0.5;
+        hero.style.transform = `translateY(${rate}px)`;
+    }
+});
+
+// Contador animado para estatísticas (se adicionadas futuramente)
+function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
+    
+    const timer = setInterval(() => {
+        start += increment;
+        element.textContent = Math.floor(start);
+        
+        if (start >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+        }
+    }, 16);
+}
+
+// Galeria de imagens interativa
+const galleryItems = document.querySelectorAll('.gallery-item');
+galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Criar modal para visualizar imagem (implementação futura)
+        console.log('Imagem clicada:', item.querySelector('p').textContent);
+    });
+});
+
+// Tooltip para ícones
+const tooltips = document.querySelectorAll('[data-tooltip]');
+tooltips.forEach(element => {
+    element.addEventListener('mouseenter', function() {
+        const tooltip = document.createElement('div');
+        tooltip.className = 'tooltip';
+        tooltip.textContent = this.getAttribute('data-tooltip');
+        tooltip.style.cssText = `
+            position: absolute;
+            background: var(--text-dark);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        `;
+        
+        document.body.appendChild(tooltip);
+        
+        const rect = this.getBoundingClientRect();
+        tooltip.style.left = rect.left + rect.width / 2 - tooltip.offsetWidth / 2 + 'px';
+        tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
+        
+        setTimeout(() => tooltip.style.opacity = '1', 10);
+        
+        this.addEventListener('mouseleave', () => {
+            tooltip.style.opacity = '0';
+            setTimeout(() => document.body.removeChild(tooltip), 300);
+        });
+    });
+});
+
+// Lazy loading para imagens (quando adicionadas)
+const lazyImages = document.querySelectorAll('img[data-src]');
+const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+        }
+    });
+});
+
+lazyImages.forEach(img => imageObserver.observe(img));
+
+// Efeito de digitação para títulos
+function typeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    
+    type();
+}
+
+// Aplicar efeito de digitação ao título principal (opcional)
+window.addEventListener('load', () => {
+    const heroTitle = document.querySelector('.hero h1');
+    if (heroTitle) {
+        const originalText = heroTitle.textContent;
+        // typeWriter(heroTitle, originalText, 150);
+    }
+});
+
+// Navegação por teclado
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        // Fechar menu mobile se estiver aberto
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
+});
+
+// Detectar preferência de movimento reduzido
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+if (prefersReducedMotion.matches) {
+    // Desabilitar animações para usuários que preferem movimento reduzido
+    document.documentElement.style.setProperty('--transition', 'none');
+    document.querySelectorAll('*').forEach(el => {
+        el.style.animation = 'none';
+        el.style.transition = 'none';
+    });
+}
+
+// Performance: Debounce para eventos de scroll
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Aplicar debounce aos eventos de scroll
+const debouncedScrollHandler = debounce(() => {
+    // Lógica de scroll otimizada
+}, 10);
+
+window.addEventListener('scroll', debouncedScrollHandler);
+
+// Service Worker para cache (PWA - implementação futura)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // navigator.serviceWorker.register('/sw.js');
+    });
+}
+
+// Analytics e métricas (implementação futura)
+function trackEvent(eventName, properties = {}) {
+    console.log('Event tracked:', eventName, properties);
+    // Implementar tracking real aqui
+}
+
+// Rastrear cliques em botões importantes
+document.querySelectorAll('.btn-primary').forEach(btn => {
+    btn.addEventListener('click', () => {
+        trackEvent('button_click', {
+            button_text: btn.textContent,
+            section: btn.closest('section')?.id || 'unknown'
+        });
+    });
+});
+
+// Rastrear visualizações de seções
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            trackEvent('section_view', {
+                section_id: entry.target.id,
+                section_name: entry.target.querySelector('h2')?.textContent || 'Unknown'
+            });
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('section[id]').forEach(section => {
+    sectionObserver.observe(section);
+});
+
+// Sistema de Abas
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+// Função para trocar de aba
+function switchTab(targetTab) {
+    // Remove classe active de todos os botões e conteúdos
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    tabContents.forEach(content => content.classList.remove('active'));
+    
+    // Adiciona classe active ao botão clicado
+    const activeButton = document.querySelector(`[data-tab="${targetTab}"]`);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+    
+    // Adiciona classe active ao conteúdo correspondente
+    const activeContent = document.getElementById(targetTab);
+    if (activeContent) {
+        activeContent.classList.add('active');
+    }
+    
+    // Atualiza URL sem recarregar a página
+    history.pushState(null, null, `#${targetTab}`);
+    
+    // Rastreia mudança de aba
+    trackEvent('tab_switch', {
+        tab_name: targetTab,
+        tab_title: activeContent?.querySelector('h2')?.textContent || targetTab
+    });
+}
+
+// Event listeners para os botões das abas
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const targetTab = button.getAttribute('data-tab');
+        switchTab(targetTab);
+    });
+});
+
+// Função para detectar hash na URL e ativar aba correspondente
+function handleHashChange() {
+    const hash = window.location.hash.substring(1);
+    if (hash && document.getElementById(hash)) {
+        switchTab(hash);
+    } else {
+        // Se não há hash, ativa a primeira aba (São Carlos Acutis)
+        switchTab('carlos');
+    }
+}
+
+// Event listener para mudanças no hash da URL
+window.addEventListener('hashchange', handleHashChange);
+
+// Ativa a aba correta quando a página carrega
+document.addEventListener('DOMContentLoaded', () => {
+    handleHashChange();
+});
+
+// Navegação por teclado para as abas
+document.addEventListener('keydown', (e) => {
+    if (e.altKey) {
+        switch(e.key) {
+            case '1':
+                e.preventDefault();
+                switchTab('carlos');
+                break;
+            case '2':
+                e.preventDefault();
+                switchTab('milagres');
+                break;
+            case '3':
+                e.preventDefault();
+                switchTab('igreja');
+                break;
+            case '4':
+                e.preventDefault();
+                switchTab('galeria');
+                break;
+            case '5':
+                e.preventDefault();
+                switchTab('jovens');
+                break;
+        }
+    }
+});
+
+// Animações específicas para as abas
+function animateTabContent(content) {
+    const elements = content.querySelectorAll('.card, .milagre-card, .virtude-card, .stat-card, .timeline-item');
+    elements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        
+        setTimeout(() => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }, index * 100);
+    });
+}
+
+// Observador para animar conteúdo quando aba se torna ativa
+const tabObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && entry.target.classList.contains('active')) {
+            animateTabContent(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+tabContents.forEach(content => {
+    tabObserver.observe(content);
+});
+
+// Contador animado para estatísticas
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    counters.forEach(counter => {
+        const target = counter.textContent;
+        const isNumber = !isNaN(parseFloat(target));
+        
+        if (isNumber) {
+            const finalNumber = parseFloat(target);
+            let current = 0;
+            const increment = finalNumber / 50;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= finalNumber) {
+                    counter.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current);
+                }
+            }, 30);
+        }
+    });
+}
+
+// Ativa contadores quando a aba da Igreja é aberta
+document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-tab="igreja"]')) {
+        setTimeout(animateCounters, 500);
+    }
+});
+
+// Efeito de hover melhorado para as abas
+tabButtons.forEach(button => {
+    button.addEventListener('mouseenter', () => {
+        if (!button.classList.contains('active')) {
+            button.style.transform = 'translateY(-2px)';
+        }
+    });
+    
+    button.addEventListener('mouseleave', () => {
+        if (!button.classList.contains('active')) {
+            button.style.transform = 'translateY(0)';
+        }
+    });
+});
+
+// Indicador de progresso para a timeline de São Carlos
+function animateTimeline() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    timelineItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateX(-20px)';
+        
+        setTimeout(() => {
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            item.style.opacity = '1';
+            item.style.transform = 'translateX(0)';
+        }, index * 200);
+    });
+}
+
+// Ativa animação da timeline quando a aba de São Carlos é aberta
+document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-tab="carlos"]')) {
+        setTimeout(animateTimeline, 500);
+    }
+});
+
+// Efeito de digitação para frases de São Carlos
+function typeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    
+    type();
+}
+
+// Aplica efeito de digitação nas frases quando a aba é ativada
+document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-tab="carlos"]')) {
+        setTimeout(() => {
+            const frases = document.querySelectorAll('.frases-container blockquote');
+            frases.forEach((frase, index) => {
+                const originalText = frase.textContent;
+                setTimeout(() => {
+                    typeWriter(frase, originalText, 50);
+                }, index * 1000);
+            });
+        }, 1000);
+    }
+});
+
+// Sistema de busca nas abas (funcionalidade futura)
+function searchInTabs(query) {
+    const searchResults = [];
+    const searchQuery = query.toLowerCase();
+    
+    tabContents.forEach(content => {
+        const text = content.textContent.toLowerCase();
+        if (text.includes(searchQuery)) {
+            searchResults.push({
+                tab: content.id,
+                title: content.querySelector('h2')?.textContent || content.id
+            });
+        }
+    });
+    
+    return searchResults;
+}
+
+// Adiciona indicador visual de aba ativa no menu principal
+function updateMainMenuActiveTab() {
+    const activeTab = document.querySelector('.tab-content.active');
+    if (activeTab) {
+        const tabId = activeTab.id;
+        const menuLinks = document.querySelectorAll('.nav-menu a');
+        
+        menuLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${tabId}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+}
+
+// Atualiza menu principal quando aba muda
+document.addEventListener('click', (e) => {
+    if (e.target.closest('.tab-btn')) {
+        setTimeout(updateMainMenuActiveTab, 100);
+    }
+});
+
+// ===== FUNCIONALIDADES ESPECÍFICAS PARA ABA JOVENS =====
+
+// Carousel de frases motivacionais
+let currentFraseIndex = 0;
+const frases = document.querySelectorAll('.frase-item');
+
+function showNextFrase() {
+    if (frases.length === 0) return;
+    
+    frases[currentFraseIndex].classList.remove('active');
+    currentFraseIndex = (currentFraseIndex + 1) % frases.length;
+    frases[currentFraseIndex].classList.add('active');
+}
+
+// Inicia o carousel de frases quando a aba jovens é ativada
+document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-tab="jovens"]')) {
+        setTimeout(() => {
+            if (frases.length > 0) {
+                setInterval(showNextFrase, 5000); // Muda a cada 5 segundos
+            }
+        }, 1000);
+    }
+});
+
+// Animações especiais para cards da aba jovens
+function animateJovensCards() {
+    const cards = document.querySelectorAll('.razao-card, .santo-card, .recurso-card');
+    
+    cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        
+        setTimeout(() => {
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 150);
+    });
+}
+
+// Ativa animações quando aba jovens é aberta
+document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-tab="jovens"]')) {
+        setTimeout(animateJovensCards, 500);
+    }
+});
+
+// Efeito de hover dinâmico para cards de razões
+document.addEventListener('DOMContentLoaded', () => {
+    const razaoCards = document.querySelectorAll('.razao-card');
+    
+    razaoCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+});
+
+// Contador animado para estatísticas dos jovens
+function animateJovensStats() {
+    const stats = document.querySelectorAll('.jovem-stat .stat-number');
+    
+    stats.forEach(stat => {
+        const target = stat.textContent;
+        const isNumber = !isNaN(parseFloat(target));
+        
+        if (isNumber) {
+            const finalNumber = parseFloat(target);
+            let current = 0;
+            const increment = finalNumber / 30;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= finalNumber) {
+                    stat.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    stat.textContent = Math.floor(current);
+                }
+            }, 50);
+        }
+    });
+}
+
+// Ativa contadores quando aba jovens é aberta
+document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-tab="jovens"]')) {
+        setTimeout(animateJovensStats, 800);
+    }
+});
+
+// Efeito de digitação para títulos da aba jovens
+function typeWriterJovens(element, text, speed = 100) {
+    let i = 0;
+    element.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    
+    type();
+}
+
+// Aplica efeito de digitação no título principal quando aba jovens é ativada
+document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-tab="jovens"]')) {
+        setTimeout(() => {
+            const titulo = document.querySelector('#jovens .tab-header h2');
+            if (titulo) {
+                const originalText = titulo.textContent;
+                typeWriterJovens(titulo, originalText, 80);
+            }
+        }, 300);
+    }
+});
+
+// Sistema de interação com botões CTA
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('btn-cta')) {
+        e.preventDefault();
+        
+        if (e.target.classList.contains('primary')) {
+            // Simula ação de "Começar Agora"
+            e.target.textContent = 'Redirecionando...';
+            e.target.style.background = '#00b894';
+            
+            setTimeout(() => {
+                e.target.textContent = 'Começar Agora';
+                e.target.style.background = '';
+                alert('🚀 Parabéns! Você está pronto para ser um jovem católico de impacto!');
+            }, 2000);
+        } else if (e.target.classList.contains('secondary')) {
+            // Simula ação de "Saber Mais"
+            e.target.textContent = 'Carregando...';
+            e.target.style.background = 'rgba(255,255,255,0.2)';
+            
+            setTimeout(() => {
+                e.target.textContent = 'Saber Mais';
+                e.target.style.background = '';
+                alert('📚 Explore mais sobre a fé católica e como ela pode transformar sua vida!');
+            }, 1500);
+        }
+    }
+});
+
+// Efeito de parallax para hero section dos jovens
+window.addEventListener('scroll', () => {
+    const jovensHero = document.querySelector('.jovens-hero');
+    if (jovensHero && document.querySelector('#jovens').classList.contains('active')) {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.3;
+        jovensHero.style.transform = `translateY(${rate}px)`;
+    }
+});
+
+// Sistema de notificações para jovens
+function showJovensNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `jovens-notification ${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
+            <span>${message}</span>
+        </div>
+    `;
+    
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#00b894' : '#667eea'};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        z-index: 10000;
+        transform: translateX(400px);
+        transition: transform 0.3s ease;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    setTimeout(() => {
+        notification.style.transform = 'translateX(400px)';
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 3000);
+}
+
+// Ativa notificação quando aba jovens é aberta
+document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-tab="jovens"]')) {
+        setTimeout(() => {
+            showJovensNotification('🔥 Bem-vindo à seção dos jovens católicos!', 'success');
+        }, 1000);
+    }
+});
+
+// Sistema de busca rápida para recursos
+function searchJovensResources(query) {
+    const recursos = document.querySelectorAll('.recurso-card');
+    const queryLower = query.toLowerCase();
+    
+    recursos.forEach(recurso => {
+        const text = recurso.textContent.toLowerCase();
+        if (text.includes(queryLower)) {
+            recurso.style.display = 'block';
+            recurso.style.animation = 'pulse 0.6s ease-in-out';
+        } else {
+            recurso.style.display = 'none';
+        }
+    });
+}
+
+// Adiciona barra de busca para recursos (funcionalidade futura)
+function addSearchBar() {
+    const recursosSection = document.querySelector('.recursos-jovens');
+    if (recursosSection && !document.querySelector('.jovens-search')) {
+        const searchBar = document.createElement('div');
+        searchBar.className = 'jovens-search';
+        searchBar.innerHTML = `
+            <input type="text" placeholder="Buscar recursos..." class="search-input">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        `;
+        
+        searchBar.style.cssText = `
+            display: flex;
+            gap: 10px;
+            margin-bottom: 2rem;
+            justify-content: center;
+        `;
+        
+        const searchInput = searchBar.querySelector('.search-input');
+        const searchBtn = searchBar.querySelector('.search-btn');
+        
+        searchInput.style.cssText = `
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            outline: none;
+            width: 300px;
+            font-size: 1rem;
+        `;
+        
+        searchBtn.style.cssText = `
+            padding: 10px 15px;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+        `;
+        
+        searchBtn.addEventListener('click', () => {
+            searchJovensResources(searchInput.value);
+        });
+        
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchJovensResources(searchInput.value);
+            }
+        });
+        
+        recursosSection.insertBefore(searchBar, recursosSection.querySelector('h3').nextSibling);
+    }
+}
+
+// Ativa barra de busca quando aba jovens é aberta
+document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-tab="jovens"]')) {
+        setTimeout(addSearchBar, 2000);
+    }
+});
+
+// Sistema de compartilhamento social para jovens
+function addSocialShare() {
+    const ctaSection = document.querySelector('.jovens-cta');
+    if (ctaSection && !document.querySelector('.social-share')) {
+        const shareButtons = document.createElement('div');
+        shareButtons.className = 'social-share';
+        shareButtons.innerHTML = `
+            <p>Compartilhe com outros jovens:</p>
+            <div class="share-buttons">
+                <button class="share-btn facebook"><i class="fab fa-facebook"></i></button>
+                <button class="share-btn instagram"><i class="fab fa-instagram"></i></button>
+                <button class="share-btn twitter"><i class="fab fa-twitter"></i></button>
+                <button class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></button>
+            </div>
+        `;
+        
+        shareButtons.style.cssText = `
+            margin-top: 2rem;
+            text-align: center;
+        `;
+        
+        const shareBtns = shareButtons.querySelectorAll('.share-btn');
+        shareBtns.forEach(btn => {
+            btn.style.cssText = `
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: none;
+                margin: 0 10px;
+                cursor: pointer;
+                transition: var(--transition);
+                color: white;
+                font-size: 1.2rem;
+            `;
+            
+            if (btn.classList.contains('facebook')) btn.style.background = '#3b5998';
+            if (btn.classList.contains('instagram')) btn.style.background = '#e4405f';
+            if (btn.classList.contains('twitter')) btn.style.background = '#1da1f2';
+            if (btn.classList.contains('whatsapp')) btn.style.background = '#25d366';
+            
+            btn.addEventListener('click', () => {
+                showJovensNotification('Compartilhado com sucesso! 🙏', 'success');
+            });
+        });
+        
+        ctaSection.appendChild(shareButtons);
+    }
+}
+
+// Ativa botões de compartilhamento quando aba jovens é aberta
+document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-tab="jovens"]')) {
+        setTimeout(addSocialShare, 3000);
+    }
+});
+
+console.log('Sistema de abas da Igreja Católica carregado com sucesso! 🙏');
+console.log('Atalhos de teclado: Alt+1 (São Carlos), Alt+2 (Milagres), Alt+3 (Igreja), Alt+4 (Galeria), Alt+5 (Jovens)');
+console.log('🔥 Aba Jovens com recursos interativos carregada!');
+
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #8B4513;
+    --secondary-color: #DAA520;
+    --accent-color: #B8860B;
+    --text-dark: #2C2C2C;
+    --text-light: #666;
+    --bg-light: #F8F9FA;
+    --white: #FFFFFF;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-logo i {
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-dark);
+    margin: 3px 0;
+    transition: var(--transition);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Sections */
+.section {
+    padding: 80px 0;
+}
+
+.section.bg-light {
+    background: var(--bg-light);
+}
+
+/* Sistema de Abas */
+.tabs-section {
+    padding: 60px 0;
+    background: var(--bg-light);
+}
+
+.tabs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    background: var(--white);
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+}
+
+.tab-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 25px;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    min-width: 150px;
+    text-align: center;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.tab-btn i {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.tab-btn span {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tab-btn:hover {
+    background: rgba(139, 69, 19, 0.1);
+    color: var(--primary-color);
+}
+
+.tab-btn:hover i {
+    color: var(--primary-color);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.tab-btn.active i {
+    color: var(--white);
+}
+
+.tab-content {
+    display: none;
+    background: var(--white);
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--bg-light);
+}
+
+.tab-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.tab-header p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Milagres Eucarísticos */
+.milagres-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.milagre-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.milagre-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.milagre-image {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.milagre-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.milagre-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.eucaristia-info {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.eucaristia-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.eucaristia-info p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Seção de Imagens Reais */
+.imagens-reais-section {
+    margin-top: 3rem;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.imagens-reais-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.fontes-imagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.fonte-card {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+    transition: var(--transition);
+}
+
+.fonte-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.fonte-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.fonte-card p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.btn-link {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-link:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.importante-nota {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #f39c12;
+}
+
+.importante-nota h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #d68910;
+}
+
+.importante-nota p {
+    color: #856404;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Estilos para as Abas Específicas */
+.milagres-special-content,
+.igreja-special-content,
+.galeria-special-content {
+    max-width: 100%;
+}
+
+.milagres-intro,
+.igreja-intro {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.milagres-intro h3,
+.igreja-intro h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.milagres-intro p,
+.igreja-intro p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Estatísticas da Igreja */
+.igreja-estatisticas {
+    margin-top: 3rem;
+}
+
+.igreja-estatisticas h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.stat-card .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card .stat-label {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* Estilos para links de milagres */
+.milagre-fotos {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.milagre-fotos h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.milagre-fotos p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.milagre-fotos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.milagre-fotos li {
+    margin-bottom: 0.3rem;
+}
+
+.milagre-fotos a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.milagre-fotos a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* São Carlos Acutis - Aba Especial */
+.carlos-special-content {
+    max-width: 100%;
+}
+
+.carlos-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--bg-light), var(--white));
+    border-radius: 15px;
+}
+
+.carlos-image-large {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.carlos-photo-large {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 4rem;
+    box-shadow: var(--shadow-hover);
+    border: 5px solid var(--white);
+}
+
+.carlos-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.carlos-dates {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.carlos-title {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* Timeline */
+.carlos-timeline {
+    margin-bottom: 3rem;
+}
+
+.carlos-timeline h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 3rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 3px var(--secondary-color);
+}
+
+.timeline-date {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* Virtudes */
+.carlos-virtudes {
+    margin-bottom: 3rem;
+}
+
+.carlos-virtudes h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.virtudes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.virtude-card {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.virtude-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.virtude-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.virtude-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.virtude-card p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Frases */
+.carlos-frases {
+    margin-bottom: 3rem;
+}
+
+.carlos-frases h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.frases-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.frase-destaque {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border: none;
+    position: relative;
+}
+
+.frase-destaque::before {
+    content: '"';
+    font-size: 4rem;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    opacity: 0.3;
+}
+
+.frases-container blockquote:not(.frase-destaque) {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+    font-style: italic;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* Legado */
+.carlos-legado {
+    margin-bottom: 2rem;
+}
+
+.carlos-legado h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.legado-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.legado-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.legado-text p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.legado-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background: var(--bg-light);
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* São Carlos Acutis - Estilos Antigos (mantidos para compatibilidade) */
+.carlos-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 3rem;
+}
+
+.carlos-image {
+    display: flex;
+    justify-content: center;
+}
+
+.carlos-photo {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 4rem;
+    box-shadow: var(--shadow);
+}
+
+.carlos-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.carlos-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin: 1.5rem 0 0.5rem;
+    color: var(--primary-color);
+}
+
+.carlos-text ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.carlos-text li {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.carlos-quotes {
+    text-align: center;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.carlos-quotes blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.carlos-quotes cite {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+/* Galeria */
+.gallery-section {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    aspect-ratio: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-hover);
+}
+
+.gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.gallery-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.gallery-placeholder p {
+    font-weight: 600;
+}
+
+/* Contato */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.contact-info p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.contact-item i {
+    width: 20px;
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Footer */
+.footer {
+    background: var(--text-dark);
+    color: var(--white);
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.footer-section p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+    color: #ccc;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow);
+        padding: 2rem 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .carlos-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .milagres-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .fontes-imagens {
+        grid-template-columns: 1fr;
+    }
+    
+    .imagens-reais-section {
+        padding: 1.5rem;
+    }
+    
+    /* Responsividade para Abas */
+    .tabs-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .tab-btn {
+        min-width: 120px;
+        padding: 15px 20px;
+    }
+    
+    .tab-btn span {
+        font-size: 0.8rem;
+    }
+    
+    .tab-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .tab-header h2 {
+        font-size: 2rem;
+    }
+    
+    .carlos-hero {
+        padding: 1.5rem;
+    }
+    
+    .carlos-photo-large {
+        width: 120px;
+        height: 120px;
+        font-size: 3rem;
+    }
+    
+    .timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline::before {
+        left: 15px;
+    }
+    
+    .timeline-item {
+        padding-left: 2.5rem;
+    }
+    
+    .timeline-item::before {
+        left: -6px;
+        width: 12px;
+        height: 12px;
+    }
+    
+    .virtudes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .legado-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .milagre-card {
+        padding: 1.5rem;
+    }
+    
+    /* Responsividade Mobile para Abas */
+    .tabs-nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .tab-btn {
+        min-width: 100%;
+        padding: 12px 15px;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    
+    .tab-btn i {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+    }
+    
+    .tab-btn span {
+        font-size: 0.9rem;
+    }
+    
+    .tab-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .tab-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .carlos-photo-large {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+    }
+    
+    .timeline {
+        padding-left: 1rem;
+    }
+    
+    .timeline::before {
+        left: 10px;
+    }
+    
+    .timeline-item {
+        padding-left: 2rem;
+    }
+    
+    .timeline-item::before {
+        left: -4px;
+        width: 8px;
+        height: 8px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        padding: 1.5rem;
+    }
+    
+    .stat-card .stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card,
+.milagre-card,
+.gallery-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading states */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Estados de foco para acessibilidade */
+.btn-primary:focus,
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* ===== ABA JOVENS - DESIGN MODERNO ===== */
+.jovens-special-content {
+    max-width: 100%;
+}
+
+/* Hero Section Jovens */
+.jovens-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.jovens-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    opacity: 0.3;
+}
+
+.jovens-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.jovens-hero h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.jovens-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.jovens-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.jovem-stat {
+    text-align: center;
+}
+
+.jovem-stat .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.jovem-stat .stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* Por que ser católico */
+.porque-catolico {
+    margin-bottom: 3rem;
+}
+
+.porque-catolico h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.razoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.razao-card {
+    background: linear-gradient(135deg, var(--white), var(--bg-light));
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.razao-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.razao-card:hover::before {
+    left: 100%;
+}
+
+.razao-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border-color: var(--secondary-color);
+}
+
+.razao-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--white);
+    font-size: 2rem;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.razao-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.razao-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Santos Jovens */
+.santos-jovens {
+    margin-bottom: 3rem;
+}
+
+.santos-jovens h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.santos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.santo-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    border-top: 5px solid var(--secondary-color);
+    position: relative;
+}
+
+.santo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.santo-image {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--white);
+    font-size: 3rem;
+    box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
+}
+
+.santo-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.santo-idade {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.santo-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.santo-frase {
+    background: var(--bg-light);
+    padding: 1rem;
+    border-radius: 10px;
+    font-style: italic;
+    color: var(--primary-color);
+    font-weight: 500;
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Desafios dos Jovens */
+.desafios-jovens {
+    margin-bottom: 3rem;
+}
+
+.desafios-jovens h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.desafios-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.desafio-item {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.desafio-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.desafio-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.desafio-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.desafio-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Recursos para Jovens */
+.recursos-jovens {
+    margin-bottom: 3rem;
+}
+
+.recursos-jovens h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.recursos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.recurso-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 5px solid var(--secondary-color);
+}
+
+.recurso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.recurso-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #00b894, #00a085);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.recurso-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.recurso-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recurso-card li {
+    padding: 0.5rem 0;
+    color: var(--text-light);
+    border-bottom: 1px solid var(--bg-light);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.recurso-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.recurso-card li:last-child {
+    border-bottom: none;
+}
+
+/* Call to Action */
+.jovens-cta {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.jovens-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="rgba(255,255,255,0.2)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+    opacity: 0.3;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-cta {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-cta.primary {
+    background: var(--white);
+    color: #667eea;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-cta.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.btn-cta.secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-cta.secondary:hover {
+    background: var(--white);
+    color: #667eea;
+    transform: translateY(-3px);
+}
+
+/* Frases Motivacionais */
+.frases-jovens {
+    margin-bottom: 2rem;
+}
+
+.frases-jovens h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.frases-carousel {
+    position: relative;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    min-height: 150px;
+}
+
+.frase-item {
+    display: none;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.frase-item.active {
+    display: block;
+}
+
+.frase-item blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.frase-item cite {
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Animações específicas para jovens */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.razao-card:hover .razao-icon {
+    animation: pulse 0.6s ease-in-out;
+}
+
+.santo-card:hover .santo-image {
+    animation: pulse 0.6s ease-in-out;
+}
+
+/* Responsividade para aba Jovens */
+@media (max-width: 768px) {
+    .jovens-hero h3 {
+        font-size: 2rem;
+    }
+    
+    .jovens-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .jovem-stat .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .razoes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .santos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .desafio-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .desafio-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .recursos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-cta {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .jovens-hero {
+        padding: 2rem 1rem;
+    }
+    
+    .jovens-hero h3 {
+        font-size: 1.8rem;
+    }
+    
+    .jovens-subtitle {
+        font-size: 1rem;
+    }
+    
+    .razao-card,
+    .santo-card,
+    .recurso-card {
+        padding: 1.5rem;
+    }
+    
+    .desafio-item {
+        padding: 1.5rem;
+    }
+    
+    .frases-carousel {
+        padding: 1.5rem;
+    }
+    
+    .frase-item blockquote {
+        font-size: 1.2rem;
+    }
+}
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependências
+node_modules/
+package-lock.json
+
+# Arquivos de backup
+*.bak
+*.backup
+*~
+
+# Arquivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos de build (se houver)
+dist/
+build/
+
+# Arquivos de configuração local
+.env
+.env.local
+
+# 🚀 Guia de Deploy - Site Igreja Católica
+
+## 📁 Estrutura do Projeto
+
+```
+site-igreja-catolica/
+├── index.html              # Página principal
+├── styles.css              # Estilos CSS
+├── script.js               # JavaScript
+├── README.md               # Documentação
+├── IMAGENS_MILAGRES.md     # Guia de imagens
+├── package.json            # Configurações do projeto
+├── .gitignore             # Arquivos ignorados pelo Git
+└── deploy.md              # Este arquivo
+```
+
+## 🌐 Opções de Deploy Gratuito
+
+### 1. **Netlify** (Recomendado)
+1. Acesse [netlify.com](https://netlify.com)
+2. Arraste a pasta do projeto para a área de deploy
+3. Receba um link público automaticamente
+4. **Vantagens**: Deploy instantâneo, HTTPS automático, CDN global
+
+### 2. **Vercel**
+1. Acesse [vercel.com](https://vercel.com)
+2. Conecte com GitHub ou faça upload direto
+3. Deploy automático em segundos
+4. **Vantagens**: Performance excelente, domínio personalizado
+
+### 3. **GitHub Pages**
+1. Crie conta no [GitHub](https://github.com)
+2. Crie um repositório público
+3. Faça upload dos arquivos
+4. Ative GitHub Pages nas configurações
+5. **Vantagens**: Integração com Git, gratuito
+
+### 4. **Firebase Hosting**
+1. Acesse [Firebase](https://firebase.google.com)
+2. Crie um projeto
+3. Use Firebase CLI para deploy
+4. **Vantagens**: Integração com Google, rápido
+
+## 📱 Como Executar Localmente
+
+### Opção 1: Abrir Diretamente
+```bash
+# Navegue até a pasta do projeto
+cd "C:\Users\los jota\Desktop\Nova pasta"
+
+# Abra o index.html no navegador
+start index.html
+```
+
+### Opção 2: Servidor Local (Recomendado)
+```bash
+# Instale dependências (opcional)
+npm install
+
+# Execute servidor local
+npm start
+# ou
+npm run dev
+```
+
+## 🔧 Comandos Úteis
+
+```bash
+# Iniciar servidor local
+npm start
+
+# Modo desenvolvimento com auto-reload
+npm run dev
+
+# Verificar estrutura do projeto
+ls -la
+```
+
+## 📋 Checklist de Deploy
+
+- [ ] Todos os arquivos estão na pasta
+- [ ] `index.html` abre corretamente
+- [ ] Todas as abas funcionam
+- [ ] Design responsivo funciona
+- [ ] Links externos funcionam
+- [ ] Imagens carregam (quando adicionadas)
+
+## 🌍 URLs de Exemplo
+
+Após o deploy, você terá URLs como:
+- **Netlify**: `https://seu-projeto.netlify.app`
+- **Vercel**: `https://seu-projeto.vercel.app`
+- **GitHub Pages**: `https://seu-usuario.github.io/seu-repositorio`
+
+## 📞 Suporte
+
+Se precisar de ajuda com o deploy:
+1. Verifique se todos os arquivos estão na pasta
+2. Teste localmente primeiro
+3. Use as opções de deploy gratuito
+4. Consulte a documentação da plataforma escolhida
+
+---
+
+**🎉 Seu site está pronto para o mundo!**
+
+# 📸 Guia para Imagens Autênticas dos Milagres Eucarísticos
+
+## 🌟 Fontes Oficiais e Confiáveis
+
+### 1. **Exposição Internacional de Milagres Eucarísticos**
+- **Site Oficial**: https://www.miracolieucaristici.org
+- **Criada por**: São Carlos Acutis
+- **Conteúdo**: Mais de 100 milagres eucarísticos documentados com fotos autênticas
+- **Idiomas**: Disponível em múltiplos idiomas, incluindo português
+
+### 2. **Site de São Carlos Acutis**
+- **URL**: https://carloacutis.com/pt/association/mostra-miracoli-eucaristici
+- **Conteúdo**: Exposição digital completa com imagens e descrições
+- **Especialidade**: Milagres catalogados pelo santo da era digital
+
+### 3. **ChurchPOP Brasil**
+- **Artigo**: https://pt.churchpop.com/5-milagres-eucaristicos-incriveis/
+- **Conteúdo**: 5 milagres eucarísticos com fotos e análises científicas
+- **Qualidade**: Imagens de alta resolução e informações detalhadas
+
+## 🔍 Milagres Específicos com Imagens Disponíveis
+
+### **Milagre de Lanciano (Itália - 700 d.C.)**
+- **O que ver**: Tecido cardíaco humano preservado há 1300 anos
+- **Análise científica**: Grupo sanguíneo AB, tecido cardíaco autêntico
+- **Localização**: Basílica de São Francisco, Lanciano, Itália
+- **Fotos**: Disponíveis na exposição oficial
+
+### **Milagre de Buenos Aires (Argentina - 1996)**
+- **O que ver**: Hóstia que se transformou em tecido cardíaco
+- **Análise**: Dr. Ricardo Castañón Gómez (cientista ateu que se converteu)
+- **Documentação**: Fotos microscópicas e análises laboratoriais
+- **Status**: Reconhecido pela Igreja Católica
+
+### **Milagre de Tixtla (México - 2006)**
+- **O que ver**: Hóstia sangrando durante a missa
+- **Testemunhas**: Centenas de fiéis presentes
+- **Documentação**: Fotos e vídeos do momento exato
+- **Reconhecimento**: Bispo local confirmou a autenticidade
+
+## 📱 Como Acessar as Imagens
+
+### **Método 1: Site Oficial**
+1. Acesse https://www.miracolieucaristici.org
+2. Selecione o idioma português
+3. Navegue pelos milagres por país ou data
+4. Clique no milagre desejado para ver fotos e descrições
+
+### **Método 2: Exposição de São Carlos Acutis**
+1. Visite https://carloacutis.com/pt/association/mostra-miracoli-eucaristici
+2. Explore a exposição digital
+3. Acesse as seções específicas de cada milagre
+4. Visualize as imagens em alta resolução
+
+### **Método 3: Artigos Especializados**
+1. Acesse https://pt.churchpop.com/5-milagres-eucaristicos-incriveis/
+2. Leia as descrições detalhadas
+3. Visualize as fotos autênticas
+4. Consulte as análises científicas
+
+## ⚠️ Considerações Importantes
+
+### **Respeito e Reverência**
+- As imagens dos milagres eucarísticos são sagradas
+- Devem ser tratadas com respeito e devoção
+- Não devem ser usadas para fins comerciais
+- Sempre citar as fontes oficiais
+
+### **Direitos Autorais**
+- Verificar sempre os direitos de uso das imagens
+- Muitas imagens têm restrições de uso
+- Preferir sempre as fontes oficiais da Igreja
+- Respeitar os termos de uso dos sites
+
+### **Autenticidade**
+- Sempre verificar a fonte das imagens
+- Preferir sites oficiais da Igreja Católica
+- Evitar imagens de fontes não confiáveis
+- Consultar documentos oficiais quando possível
+
+## 🛠️ Implementação no Site
+
+### **Para Desenvolvedores**
+```html
+<!-- Exemplo de implementação -->
+<div class="milagre-imagem">
+    <img src="caminho/para/imagem.jpg" alt="Milagre Eucarístico de Lanciano">
+    <p class="legenda">Tecido cardíaco preservado desde 700 d.C. - Lanciano, Itália</p>
+    <p class="fonte">Fonte: Exposição Internacional de Milagres Eucarísticos</p>
+</div>
+```
+
+### **CSS Recomendado**
+```css
+.milagre-imagem {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.milagre-imagem img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.legenda {
+    font-style: italic;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+.fonte {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.3rem;
+}
+```
+
+## 📚 Recursos Adicionais
+
+### **Livros Recomendados**
+- "Milagres Eucarísticos" - Pe. João Batista Reus
+- "A Eucaristia: Milagres e Testemunhos" - Pe. Antônio Royo Marín
+- "Milagres Eucarísticos no Mundo" - Pe. Carlos Martins
+
+### **Documentários**
+- "Milagres Eucarísticos" - EWTN
+- "A Presença Real" - Salt + Light Media
+- "Milagres da Eucaristia" - Catholic Answers
+
+### **Sites Adicionais**
+- Vatican News (seção de milagres)
+- Catholic News Agency
+- ACI Digital (Agência Católica de Informações)
+
+## 🙏 Oração Final
+
+*"Senhor Jesus, que nos deixastes na Eucaristia o memorial da vossa paixão, morte e ressurreição, concedei-nos a graça de reconhecer vossa presença real neste sacramento e de viver sempre em comunhão convosco. Amém."*
+
+---
+
+**Nota**: Este guia foi criado para ajudar na localização de imagens autênticas dos milagres eucarísticos. Sempre consulte as fontes oficiais da Igreja Católica para garantir a autenticidade e o uso apropriado das imagens.
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igreja Católica - Milagres Eucarísticos e São Carlos Acutis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-cross"></i>
+                    <span>Igreja Católica</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#igreja">Igreja Católica</a></li>
+                    <li><a href="#milagres">Milagres Eucarísticos</a></li>
+                    <li><a href="#carlos">São Carlos Acutis</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Igreja Católica</h1>
+            <h2>Milagres Eucarísticos e São Carlos Acutis</h2>
+            <p>Descubra a beleza da fé católica através dos milagres eucarísticos e da vida inspiradora de São Carlos Acutis</p>
+            <a href="#conteudo" class="btn-primary">Explorar</a>
+        </div>
+        <div class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+    </section>
+
+    <!-- Sistema de Abas -->
+    <section id="conteudo" class="tabs-section">
+        <div class="container">
+            <div class="tabs-container">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="carlos">
+                        <i class="fas fa-user-circle"></i>
+                        <span>São Carlos Acutis</span>
+                    </button>
+                    <button class="tab-btn" data-tab="milagres">
+                        <i class="fas fa-bread-slice"></i>
+                        <span>Milagres Eucarísticos</span>
+                    </button>
+                    <button class="tab-btn" data-tab="igreja">
+                        <i class="fas fa-church"></i>
+                        <span>Igreja Católica</span>
+                    </button>
+                    <button class="tab-btn" data-tab="galeria">
+                        <i class="fas fa-images"></i>
+                        <span>Galeria</span>
+                    </button>
+                    <button class="tab-btn" data-tab="jovens">
+                        <i class="fas fa-fire"></i>
+                        <span>Jovens</span>
+                    </button>
+                </div>
+
+                <!-- Aba São Carlos Acutis -->
+                <div id="carlos" class="tab-content active">
+                    <div class="tab-header">
+                        <h2>São Carlos Acutis</h2>
+                        <p>O Santo da Era Digital</p>
+                    </div>
+                    
+                    <div class="carlos-special-content">
+                        <div class="carlos-hero">
+                            <div class="carlos-image-large">
+                                <div class="carlos-photo-large">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="carlos-info">
+                                    <h3>Carlo Acutis</h3>
+                                    <p class="carlos-dates">1991 - 2006</p>
+                                    <p class="carlos-title">Santo da Era Digital</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carlos-timeline">
+                            <h3>📅 Linha do Tempo da Vida de São Carlos</h3>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1991</div>
+                                    <div class="timeline-content">
+                                        <h4>Nascimento</h4>
+                                        <p>3 de maio em Londres, Inglaterra</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1996</div>
+                                    <div class="timeline-content">
+                                        <h4>Primeira Comunhão</h4>
+                                        <p>Recebeu a Eucaristia pela primeira vez aos 5 anos</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2000</div>
+                                    <div class="timeline-content">
+                                        <h4>Início da Programação</h4>
+                                        <p>Começou a programar e criar sites católicos</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2005</div>
+                                    <div class="timeline-content">
+                                        <h4>Exposição dos Milagres</h4>
+                                        <p>Criou o site catalogando milagres eucarísticos</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2006</div>
+                                    <div class="timeline-content">
+                                        <h4>Morte</h4>
+                                        <p>12 de outubro em Monza, Itália, aos 15 anos</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2020</div>
+                                    <div class="timeline-content">
+                                        <h4>Beatificação</h4>
+                                        <p>10 de outubro pelo Papa Francisco</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2024</div>
+                                    <div class="timeline-content">
+                                        <h4>Canonização</h4>
+                                        <p>13 de outubro pelo Papa Francisco</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carlos-virtudes">
+                            <h3>🌟 Virtudes de São Carlos Acutis</h3>
+                            <div class="virtudes-grid">
+                                <div class="virtude-card">
+                                    <div class="virtude-icon">
+                                        <i class="fas fa-bread-slice"></i>
+                                    </div>
+                                    <h4>Amor à Eucaristia</h4>
+                                    <p>Comungava diariamente e passava horas em adoração ao Santíssimo Sacramento</p>
+                                </div>
+                                <div class="virtude-card">
+                                    <div class="virtude-icon">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <h4>Evangelização Digital</h4>
+                                    <p>Usou a tecnologia para evangelizar e criar sites católicos</p>
+                                </div>
+                                <div class="virtude-card">
+                                    <div class="virtude-icon">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <h4>Caridade</h4>
+                                    <p>Ajudava os pobres e necessitados com generosidade</p>
+                                </div>
+                                <div class="virtude-card">
+                                    <div class="virtude-icon">
+                                        <i class="fas fa-pray"></i>
+                                    </div>
+                                    <h4>Vida de Oração</h4>
+                                    <p>Mantinha uma vida intensa de oração e penitência</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carlos-frases">
+                            <h3>💬 Frases Inspiradoras</h3>
+                            <div class="frases-container">
+                                <blockquote class="frase-destaque">
+                                    "A Eucaristia é a minha estrada para o céu"
+                                </blockquote>
+                                <blockquote>
+                                    "Todos nascem como originais, mas muitos morrem como fotocópias"
+                                </blockquote>
+                                <blockquote>
+                                    "A felicidade é olhar para Deus e viver para Ele"
+                                </blockquote>
+                                <blockquote>
+                                    "Quanto mais recebemos a Eucaristia, mais nos tornamos semelhantes a Jesus"
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <div class="carlos-legado">
+                            <h3>🌐 Legado Digital</h3>
+                            <div class="legado-content">
+                                <div class="legado-text">
+                                    <h4>Exposição dos Milagres Eucarísticos</h4>
+                                    <p>São Carlos Acutis criou um site catalogando todos os milagres eucarísticos conhecidos no mundo. Este trabalho continua sendo uma referência para estudiosos e fiéis.</p>
+                                    <a href="https://www.miracolieucaristici.org" target="_blank" class="btn-primary">Ver Exposição</a>
+                                </div>
+                                <div class="legado-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">100+</span>
+                                        <span class="stat-label">Milagres Catalogados</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">15</span>
+                                        <span class="stat-label">Anos de Vida</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">2024</span>
+                                        <span class="stat-label">Ano da Canonização</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aba Milagres Eucarísticos -->
+                <div id="milagres" class="tab-content">
+                    <div class="tab-header">
+                        <h2>Milagres Eucarísticos</h2>
+                        <p>Testemunhos extraordinários da presença real de Cristo na Eucaristia</p>
+                    </div>
+                    
+                    <div class="milagres-special-content">
+                        <div class="milagres-intro">
+                            <h3>🔍 O que são os Milagres Eucarísticos?</h3>
+                            <p>Os milagres eucarísticos são fenômenos extraordinários onde a hóstia consagrada se transforma visivelmente em carne humana e o vinho em sangue, confirmando a presença real de Jesus Cristo na Eucaristia.</p>
+                        </div>
+
+                        <div class="milagres-grid">
+                            <div class="milagre-card">
+                                <div class="milagre-image">
+                                    <i class="fas fa-bread-slice"></i>
+                                </div>
+                                <h3>Lanciano (Itália - 700 d.C.)</h3>
+                                <p>Durante uma missa, a hóstia se transformou em carne humana e o vinho em sangue. Os restos são preservados até hoje e foram cientificamente analisados, confirmando serem tecido cardíaco humano do grupo sanguíneo AB.</p>
+                                <div class="milagre-fotos">
+                                    <h4>📸 Imagens Reais:</h4>
+                                    <p>Para ver as fotos autênticas do milagre de Lanciano, visite:</p>
+                                    <ul>
+                                        <li><a href="https://www.miracolieucaristici.org" target="_blank">Exposição Oficial de Milagres Eucarísticos</a></li>
+                                        <li><a href="https://carloacutis.com/pt/association/mostra-miracoli-eucaristici" target="_blank">Exposição de São Carlos Acutis</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="milagre-card">
+                                <div class="milagre-image">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h3>Buenos Aires (Argentina - 1996)</h3>
+                                <p>Uma hóstia consagrada foi encontrada profanada. Quando analisada cientificamente, revelou-se ser tecido cardíaco humano em estado de decomposição, mas com características extraordinárias.</p>
+                                <div class="milagre-fotos">
+                                    <h4>📸 Imagens Reais:</h4>
+                                    <p>Fotos autênticas e análises científicas disponíveis em:</p>
+                                    <ul>
+                                        <li><a href="https://pt.churchpop.com/5-milagres-eucaristicos-incriveis/" target="_blank">ChurchPOP - 5 Milagres Eucarísticos</a></li>
+                                        <li><a href="https://www.miracolieucaristici.org" target="_blank">Exposição Internacional</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="milagre-card">
+                                <div class="milagre-image">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h3>Tixtla (México - 2006)</h3>
+                                <p>Durante uma missa, uma hóstia consagrada começou a sangrar. O fenômeno foi testemunhado por centenas de pessoas e documentado fotograficamente.</p>
+                                <div class="milagre-fotos">
+                                    <h4>📸 Imagens Reais:</h4>
+                                    <p>Documentação fotográfica oficial disponível em:</p>
+                                    <ul>
+                                        <li><a href="https://www.miracolieucaristici.org" target="_blank">Exposição de Milagres Eucarísticos</a></li>
+                                        <li><a href="https://catequesepv.blogspot.com/2012/06/imagens-de-milagres-eucaristicos.html" target="_blank">CatequesePV - Imagens Históricas</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="eucaristia-info">
+                            <h3>A Eucaristia na Igreja Católica</h3>
+                            <p>A Eucaristia é o sacramento central da fé católica, onde o pão e o vinho se transformam verdadeiramente no Corpo e Sangue de Jesus Cristo. Este mistério da transubstanciação é o coração da missa católica e fonte de graça para os fiéis.</p>
+                        </div>
+                        
+                        <div class="imagens-reais-section">
+                            <h3>📸 Onde Encontrar Imagens Autênticas</h3>
+                            <div class="fontes-imagens">
+                                <div class="fonte-card">
+                                    <h4>🌐 Exposição Internacional de Milagres Eucarísticos</h4>
+                                    <p>Criada por São Carlos Acutis, esta exposição reúne fotografias autênticas de milagres eucarísticos de todo o mundo.</p>
+                                    <a href="https://www.miracolieucaristici.org" target="_blank" class="btn-link">Visitar Site Oficial</a>
+                                </div>
+                                
+                                <div class="fonte-card">
+                                    <h4>📱 Site de São Carlos Acutis</h4>
+                                    <p>Exposição digital com imagens e descrições detalhadas dos milagres catalogados pelo santo da era digital.</p>
+                                    <a href="https://carloacutis.com/pt/association/mostra-miracoli-eucaristici" target="_blank" class="btn-link">Acessar Exposição</a>
+                                </div>
+                                
+                                <div class="fonte-card">
+                                    <h4>📰 ChurchPOP Brasil</h4>
+                                    <p>Artigo com 5 milagres eucarísticos incríveis, incluindo fotos autênticas e análises científicas.</p>
+                                    <a href="https://pt.churchpop.com/5-milagres-eucaristicos-incriveis/" target="_blank" class="btn-link">Ver Artigo</a>
+                                </div>
+                            </div>
+                            
+                            <div class="importante-nota">
+                                <h4>⚠️ Importante:</h4>
+                                <p>As imagens dos milagres eucarísticos são sagradas e devem ser tratadas com respeito. Recomendamos sempre verificar a autenticidade das fontes e respeitar os direitos autorais das imagens oficiais.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aba Igreja Católica -->
+                <div id="igreja" class="tab-content">
+                    <div class="tab-header">
+                        <h2>Igreja Católica</h2>
+                        <p>A mais antiga instituição cristã do mundo</p>
+                    </div>
+                    
+                    <div class="igreja-special-content">
+                        <div class="igreja-intro">
+                            <h3>🏛️ História da Igreja Católica</h3>
+                            <p>A Igreja Católica é a mais antiga instituição cristã, fundada por Jesus Cristo e seus apóstolos há mais de 2000 anos. Ela preserva a tradição apostólica e a doutrina cristã original.</p>
+                        </div>
+
+                        <div class="grid">
+                            <div class="card">
+                                <div class="card-icon">
+                                    <i class="fas fa-church"></i>
+                                </div>
+                                <h3>História</h3>
+                                <p>A Igreja Católica é a mais antiga instituição cristã, fundada por Jesus Cristo e seus apóstolos há mais de 2000 anos. Ela preserva a tradição apostólica e a doutrina cristã original.</p>
+                            </div>
+                            <div class="card">
+                                <div class="card-icon">
+                                    <i class="fas fa-bible"></i>
+                                </div>
+                                <h3>Doutrina</h3>
+                                <p>Baseada na Sagrada Escritura e na Tradição, a doutrina católica ensina sobre a Santíssima Trindade, a Eucaristia, os sacramentos e a vida eterna.</p>
+                            </div>
+                            <div class="card">
+                                <div class="card-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <h3>Universalidade</h3>
+                                <p>Com mais de 1,3 bilhão de fiéis em todo o mundo, a Igreja Católica é verdadeiramente universal, presente em todos os continentes e culturas.</p>
+                            </div>
+                        </div>
+
+                        <div class="igreja-estatisticas">
+                            <h3>📊 Estatísticas da Igreja Católica</h3>
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="stat-number">1.3B</div>
+                                    <div class="stat-label">Fiéis no Mundo</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-church"></i>
+                                    </div>
+                                    <div class="stat-number">221</div>
+                                    <div class="stat-label">Países</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-cross"></i>
+                                    </div>
+                                    <div class="stat-number">2000+</div>
+                                    <div class="stat-label">Anos de História</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-pray"></i>
+                                    </div>
+                                    <div class="stat-number">7</div>
+                                    <div class="stat-label">Sacramentos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aba Galeria -->
+                <div id="galeria" class="tab-content">
+                    <div class="tab-header">
+                        <h2>Galeria</h2>
+                        <p>Imagens e recursos visuais da fé católica</p>
+                    </div>
+                    
+                    <div class="galeria-special-content">
+                        <div class="gallery">
+                            <div class="gallery-item">
+                                <div class="gallery-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <p>Basílica de São Pedro</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <p>Milagre de Lanciano</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <p>São Carlos Acutis</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <p>Eucaristia</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <p>Vaticano</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <p>Milagres Eucarísticos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aba Jovens -->
+                <div id="jovens" class="tab-content">
+                    <div class="tab-header">
+                        <h2>🔥 Jovens Católicos</h2>
+                        <p>Fé, Tecnologia e Juventude - O futuro da Igreja é agora!</p>
+                    </div>
+                    
+                    <div class="jovens-special-content">
+                        <!-- Hero Section Jovens -->
+                        <div class="jovens-hero">
+                            <div class="jovens-hero-content">
+                                <h3>🚀 A Igreja Católica é JOVEM!</h3>
+                                <p class="jovens-subtitle">Você não precisa escolher entre ser jovem e ser católico. A fé católica é moderna, dinâmica e cheia de vida!</p>
+                                <div class="jovens-stats">
+                                    <div class="jovem-stat">
+                                        <span class="stat-number">60%</span>
+                                        <span class="stat-label">dos católicos têm menos de 30 anos</span>
+                                    </div>
+                                    <div class="jovem-stat">
+                                        <span class="stat-number">2.1B</span>
+                                        <span class="stat-label">jovens católicos no mundo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Por que ser católico jovem -->
+                        <div class="porque-catolico">
+                            <h3>💡 Por que ser Católico Jovem é INCRÍVEL?</h3>
+                            <div class="razoes-grid">
+                                <div class="razao-card">
+                                    <div class="razao-icon">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <h4>Fé + Tecnologia</h4>
+                                    <p>Como São Carlos Acutis, você pode usar a tecnologia para evangelizar e espalhar a fé!</p>
+                                </div>
+                                <div class="razao-card">
+                                    <div class="razao-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <h4>Comunidade Global</h4>
+                                    <p>Conecte-se com milhões de jovens católicos ao redor do mundo!</p>
+                                </div>
+                                <div class="razao-card">
+                                    <div class="razao-icon">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <h4>Amor Verdadeiro</h4>
+                                    <p>A Igreja ensina sobre o amor verdadeiro, respeito e relacionamentos saudáveis.</p>
+                                </div>
+                                <div class="razao-card">
+                                    <div class="razao-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <h4>Propósito de Vida</h4>
+                                    <p>Encontre seu propósito e viva uma vida com significado e direção!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Santos Jovens -->
+                        <div class="santos-jovens">
+                            <h3>🌟 Santos Jovens - Seus Exemplos</h3>
+                            <div class="santos-grid">
+                                <div class="santo-card">
+                                    <div class="santo-image">
+                                        <i class="fas fa-user-circle"></i>
+                                    </div>
+                                    <h4>São Carlos Acutis</h4>
+                                    <p class="santo-idade">15 anos</p>
+                                    <p>O santo da era digital que usou a tecnologia para evangelizar!</p>
+                                    <div class="santo-frase">"A Eucaristia é minha estrada para o céu"</div>
+                                </div>
+                                <div class="santo-card">
+                                    <div class="santo-image">
+                                        <i class="fas fa-user-circle"></i>
+                                    </div>
+                                    <h4>Santa Teresinha</h4>
+                                    <p class="santo-idade">24 anos</p>
+                                    <p>A "Pequena Flor" que mostrou que santidade não tem idade!</p>
+                                    <div class="santo-frase">"Tudo é graça"</div>
+                                </div>
+                                <div class="santo-card">
+                                    <div class="santo-image">
+                                        <i class="fas fa-user-circle"></i>
+                                    </div>
+                                    <h4>São Domingos Sávio</h4>
+                                    <p class="santo-idade">14 anos</p>
+                                    <p>Estudante que se tornou santo através da pureza e devoção!</p>
+                                    <div class="santo-frase">"Antes morrer que pecar"</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Desafios dos Jovens -->
+                        <div class="desafios-jovens">
+                            <h3>⚡ Desafios dos Jovens de Hoje</h3>
+                            <div class="desafios-container">
+                                <div class="desafio-item">
+                                    <div class="desafio-icon">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div class="desafio-content">
+                                        <h4>Redes Sociais</h4>
+                                        <p>Use as redes sociais para espalhar o bem, não o ódio. Seja luz na escuridão digital!</p>
+                                    </div>
+                                </div>
+                                <div class="desafio-item">
+                                    <div class="desafio-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="desafio-content">
+                                        <h4>Estudos e Carreira</h4>
+                                        <p>Busque uma carreira que sirva a Deus e ao próximo. Seu trabalho pode ser uma missão!</p>
+                                    </div>
+                                </div>
+                                <div class="desafio-item">
+                                    <div class="desafio-icon">
+                                        <i class="fas fa-heart-broken"></i>
+                                    </div>
+                                    <div class="desafio-content">
+                                        <h4>Relacionamentos</h4>
+                                        <p>Construa relacionamentos baseados no amor verdadeiro, respeito e pureza!</p>
+                                    </div>
+                                </div>
+                                <div class="desafio-item">
+                                    <div class="desafio-icon">
+                                        <i class="fas fa-question-circle"></i>
+                                    </div>
+                                    <div class="desafio-content">
+                                        <h4>Dúvidas da Fé</h4>
+                                        <p>É normal ter dúvidas! A Igreja tem 2000 anos de sabedoria para te ajudar!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recursos para Jovens -->
+                        <div class="recursos-jovens">
+                            <h3>🎯 Recursos para Jovens Católicos</h3>
+                            <div class="recursos-grid">
+                                <div class="recurso-card">
+                                    <div class="recurso-icon">
+                                        <i class="fas fa-pray"></i>
+                                    </div>
+                                    <h4>Apps Católicos</h4>
+                                    <ul>
+                                        <li>Laudate - Oração e Liturgia</li>
+                                        <li>iBreviary - Liturgia das Horas</li>
+                                        <li>Hallow - Meditação Católica</li>
+                                        <li>Bible - Bíblia Católica</li>
+                                    </ul>
+                                </div>
+                                <div class="recurso-card">
+                                    <div class="recurso-icon">
+                                        <i class="fas fa-video"></i>
+                                    </div>
+                                    <h4>Canais YouTube</h4>
+                                    <ul>
+                                        <li>Padre Paulo Ricardo</li>
+                                        <li>Padre Fábio de Melo</li>
+                                        <li>Padre Reginaldo Manzotti</li>
+                                        <li>Padre Marcelo Rossi</li>
+                                    </ul>
+                                </div>
+                                <div class="recurso-card">
+                                    <div class="recurso-icon">
+                                        <i class="fas fa-music"></i>
+                                    </div>
+                                    <h4>Música Católica</h4>
+                                    <ul>
+                                        <li>Adoração e Vida</li>
+                                        <li>Ministério Amor e Adoração</li>
+                                        <li>Padre Marcelo Rossi</li>
+                                        <li>Padre Fábio de Melo</li>
+                                    </ul>
+                                </div>
+                                <div class="recurso-card">
+                                    <div class="recurso-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <h4>Grupos Jovens</h4>
+                                    <ul>
+                                        <li>Jovens de Maria</li>
+                                        <li>Renovação Carismática</li>
+                                        <li>Movimento Focolare</li>
+                                        <li>Comunidade Shalom</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Call to Action -->
+                        <div class="jovens-cta">
+                            <div class="cta-content">
+                                <h3>🚀 Pronto para ser um Jovem Católico de Impacto?</h3>
+                                <p>Junte-se a milhões de jovens que estão transformando o mundo através da fé católica!</p>
+                                <div class="cta-buttons">
+                                    <button class="btn-cta primary">Começar Agora</button>
+                                    <button class="btn-cta secondary">Saber Mais</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frases Motivacionais -->
+                        <div class="frases-jovens">
+                            <h3>💬 Frases que Inspiram</h3>
+                            <div class="frases-carousel">
+                                <div class="frase-item active">
+                                    <blockquote>"Não tenham medo de ser santos! Sejam santos jovens!"</blockquote>
+                                    <cite>- Papa João Paulo II</cite>
+                                </div>
+                                <div class="frase-item">
+                                    <blockquote>"A juventude é o futuro da Igreja!"</blockquote>
+                                    <cite>- Papa Francisco</cite>
+                                </div>
+                                <div class="frase-item">
+                                    <blockquote>"Sejam sal da terra e luz do mundo!"</blockquote>
+                                    <cite>- Jesus Cristo</cite>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contato Section -->
+    <section id="contato" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informações</h3>
+                    <p>Para mais informações sobre a fé católica, milagres eucarísticos ou sobre São Carlos Acutis, entre em contato conosco.</p>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contato@igrejacatolica.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(11) 99999-9999</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>São Paulo, SP - Brasil</span>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Seu nome" required>
+                    <input type="email" placeholder="Seu email" required>
+                    <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+                    <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Igreja Católica</h3>
+                    <p>Site dedicado à fé católica, milagres eucarísticos e São Carlos Acutis.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <ul>
+                        <li><a href="#igreja">Igreja Católica</a></li>
+                        <li><a href="#milagres">Milagres Eucarísticos</a></li>
+                        <li><a href="#carlos">São Carlos Acutis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Igreja Católica. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+{
+  "name": "site-igreja-catolica",
+  "version": "1.0.0",
+  "description": "Site sobre a Igreja Católica, Milagres Eucarísticos e São Carlos Acutis",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 3000",
+    "dev": "npx live-server --port=3000",
+    "build": "echo 'Projeto estático - não requer build'",
+    "deploy": "echo 'Para deploy, faça upload dos arquivos para um servidor web'"
+  },
+  "keywords": [
+    "igreja-catolica",
+    "sao-carlos-acutis",
+    "milagres-eucaristicos",
+    "jovens-catolicos",
+    "religiao",
+    "cristianismo"
+  ],
+  "author": "Desenvolvedor do Site",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "local"
+  },
+  "homepage": "./index.html"
+}
