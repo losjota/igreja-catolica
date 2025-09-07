@@ -1,0 +1,32 @@
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependências
+node_modules/
+package-lock.json
+
+# Arquivos de backup
+*.bak
+*.backup
+*~
+
+# Arquivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos de build (se houver)
+dist/
+build/
+
+# Arquivos de configuração local
+.env
+.env.local

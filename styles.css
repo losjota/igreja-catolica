@@ -1,0 +1,2078 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #8B4513;
+    --secondary-color: #DAA520;
+    --accent-color: #B8860B;
+    --text-dark: #2C2C2C;
+    --text-light: #666;
+    --bg-light: #F8F9FA;
+    --white: #FFFFFF;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-logo i {
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-dark);
+    margin: 3px 0;
+    transition: var(--transition);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Sections */
+.section {
+    padding: 80px 0;
+}
+
+.section.bg-light {
+    background: var(--bg-light);
+}
+
+/* Sistema de Abas */
+.tabs-section {
+    padding: 60px 0;
+    background: var(--bg-light);
+}
+
+.tabs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    background: var(--white);
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+}
+
+.tab-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 25px;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    min-width: 150px;
+    text-align: center;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.tab-btn i {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.tab-btn span {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tab-btn:hover {
+    background: rgba(139, 69, 19, 0.1);
+    color: var(--primary-color);
+}
+
+.tab-btn:hover i {
+    color: var(--primary-color);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.tab-btn.active i {
+    color: var(--white);
+}
+
+.tab-content {
+    display: none;
+    background: var(--white);
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--bg-light);
+}
+
+.tab-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.tab-header p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Milagres Eucarísticos */
+.milagres-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.milagre-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.milagre-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.milagre-image {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.milagre-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.milagre-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.eucaristia-info {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.eucaristia-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.eucaristia-info p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Seção de Imagens Reais */
+.imagens-reais-section {
+    margin-top: 3rem;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.imagens-reais-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.fontes-imagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.fonte-card {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+    transition: var(--transition);
+}
+
+.fonte-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.fonte-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.fonte-card p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.btn-link {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-link:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.importante-nota {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #f39c12;
+}
+
+.importante-nota h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #d68910;
+}
+
+.importante-nota p {
+    color: #856404;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Estilos para as Abas Específicas */
+.milagres-special-content,
+.igreja-special-content,
+.galeria-special-content {
+    max-width: 100%;
+}
+
+.milagres-intro,
+.igreja-intro {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.milagres-intro h3,
+.igreja-intro h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.milagres-intro p,
+.igreja-intro p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Estatísticas da Igreja */
+.igreja-estatisticas {
+    margin-top: 3rem;
+}
+
+.igreja-estatisticas h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.stat-card .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card .stat-label {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* Estilos para links de milagres */
+.milagre-fotos {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.milagre-fotos h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.milagre-fotos p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.milagre-fotos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.milagre-fotos li {
+    margin-bottom: 0.3rem;
+}
+
+.milagre-fotos a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.milagre-fotos a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* São Carlos Acutis - Aba Especial */
+.carlos-special-content {
+    max-width: 100%;
+}
+
+.carlos-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--bg-light), var(--white));
+    border-radius: 15px;
+}
+
+.carlos-image-large {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.carlos-photo-large {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 4rem;
+    box-shadow: var(--shadow-hover);
+    border: 5px solid var(--white);
+}
+
+.carlos-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.carlos-dates {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.carlos-title {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* Timeline */
+.carlos-timeline {
+    margin-bottom: 3rem;
+}
+
+.carlos-timeline h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 3rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 3px var(--secondary-color);
+}
+
+.timeline-date {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* Virtudes */
+.carlos-virtudes {
+    margin-bottom: 3rem;
+}
+
+.carlos-virtudes h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.virtudes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.virtude-card {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.virtude-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.virtude-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.virtude-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.virtude-card p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Frases */
+.carlos-frases {
+    margin-bottom: 3rem;
+}
+
+.carlos-frases h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.frases-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.frase-destaque {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border: none;
+    position: relative;
+}
+
+.frase-destaque::before {
+    content: '"';
+    font-size: 4rem;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    opacity: 0.3;
+}
+
+.frases-container blockquote:not(.frase-destaque) {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+    font-style: italic;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* Legado */
+.carlos-legado {
+    margin-bottom: 2rem;
+}
+
+.carlos-legado h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.legado-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.legado-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.legado-text p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.legado-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background: var(--bg-light);
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* São Carlos Acutis - Estilos Antigos (mantidos para compatibilidade) */
+.carlos-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 3rem;
+}
+
+.carlos-image {
+    display: flex;
+    justify-content: center;
+}
+
+.carlos-photo {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 4rem;
+    box-shadow: var(--shadow);
+}
+
+.carlos-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.carlos-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin: 1.5rem 0 0.5rem;
+    color: var(--primary-color);
+}
+
+.carlos-text ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.carlos-text li {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.carlos-quotes {
+    text-align: center;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.carlos-quotes blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.carlos-quotes cite {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+/* Galeria */
+.gallery-section {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    aspect-ratio: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-hover);
+}
+
+.gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.gallery-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.gallery-placeholder p {
+    font-weight: 600;
+}
+
+/* Contato */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.contact-info p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.contact-item i {
+    width: 20px;
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Footer */
+.footer {
+    background: var(--text-dark);
+    color: var(--white);
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.footer-section p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+    color: #ccc;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow);
+        padding: 2rem 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .carlos-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .milagres-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .fontes-imagens {
+        grid-template-columns: 1fr;
+    }
+    
+    .imagens-reais-section {
+        padding: 1.5rem;
+    }
+    
+    /* Responsividade para Abas */
+    .tabs-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .tab-btn {
+        min-width: 120px;
+        padding: 15px 20px;
+    }
+    
+    .tab-btn span {
+        font-size: 0.8rem;
+    }
+    
+    .tab-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .tab-header h2 {
+        font-size: 2rem;
+    }
+    
+    .carlos-hero {
+        padding: 1.5rem;
+    }
+    
+    .carlos-photo-large {
+        width: 120px;
+        height: 120px;
+        font-size: 3rem;
+    }
+    
+    .timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline::before {
+        left: 15px;
+    }
+    
+    .timeline-item {
+        padding-left: 2.5rem;
+    }
+    
+    .timeline-item::before {
+        left: -6px;
+        width: 12px;
+        height: 12px;
+    }
+    
+    .virtudes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .legado-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .milagre-card {
+        padding: 1.5rem;
+    }
+    
+    /* Responsividade Mobile para Abas */
+    .tabs-nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .tab-btn {
+        min-width: 100%;
+        padding: 12px 15px;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    
+    .tab-btn i {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+    }
+    
+    .tab-btn span {
+        font-size: 0.9rem;
+    }
+    
+    .tab-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .tab-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .carlos-photo-large {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+    }
+    
+    .timeline {
+        padding-left: 1rem;
+    }
+    
+    .timeline::before {
+        left: 10px;
+    }
+    
+    .timeline-item {
+        padding-left: 2rem;
+    }
+    
+    .timeline-item::before {
+        left: -4px;
+        width: 8px;
+        height: 8px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        padding: 1.5rem;
+    }
+    
+    .stat-card .stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card,
+.milagre-card,
+.gallery-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading states */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Estados de foco para acessibilidade */
+.btn-primary:focus,
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* ===== ABA JOVENS - DESIGN MODERNO ===== */
+.jovens-special-content {
+    max-width: 100%;
+}
+
+/* Hero Section Jovens */
+.jovens-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.jovens-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    opacity: 0.3;
+}
+
+.jovens-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.jovens-hero h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.jovens-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.jovens-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.jovem-stat {
+    text-align: center;
+}
+
+.jovem-stat .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.jovem-stat .stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* Por que ser católico */
+.porque-catolico {
+    margin-bottom: 3rem;
+}
+
+.porque-catolico h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.razoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.razao-card {
+    background: linear-gradient(135deg, var(--white), var(--bg-light));
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.razao-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.razao-card:hover::before {
+    left: 100%;
+}
+
+.razao-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border-color: var(--secondary-color);
+}
+
+.razao-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--white);
+    font-size: 2rem;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.razao-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.razao-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Santos Jovens */
+.santos-jovens {
+    margin-bottom: 3rem;
+}
+
+.santos-jovens h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.santos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.santo-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    border-top: 5px solid var(--secondary-color);
+    position: relative;
+}
+
+.santo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.santo-image {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--white);
+    font-size: 3rem;
+    box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
+}
+
+.santo-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.santo-idade {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.santo-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.santo-frase {
+    background: var(--bg-light);
+    padding: 1rem;
+    border-radius: 10px;
+    font-style: italic;
+    color: var(--primary-color);
+    font-weight: 500;
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Desafios dos Jovens */
+.desafios-jovens {
+    margin-bottom: 3rem;
+}
+
+.desafios-jovens h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.desafios-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.desafio-item {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.desafio-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.desafio-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.desafio-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.desafio-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Recursos para Jovens */
+.recursos-jovens {
+    margin-bottom: 3rem;
+}
+
+.recursos-jovens h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.recursos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.recurso-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 5px solid var(--secondary-color);
+}
+
+.recurso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.recurso-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #00b894, #00a085);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.recurso-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.recurso-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recurso-card li {
+    padding: 0.5rem 0;
+    color: var(--text-light);
+    border-bottom: 1px solid var(--bg-light);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.recurso-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.recurso-card li:last-child {
+    border-bottom: none;
+}
+
+/* Call to Action */
+.jovens-cta {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.jovens-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="rgba(255,255,255,0.2)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+    opacity: 0.3;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-cta {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-cta.primary {
+    background: var(--white);
+    color: #667eea;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-cta.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.btn-cta.secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-cta.secondary:hover {
+    background: var(--white);
+    color: #667eea;
+    transform: translateY(-3px);
+}
+
+/* Frases Motivacionais */
+.frases-jovens {
+    margin-bottom: 2rem;
+}
+
+.frases-jovens h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.frases-carousel {
+    position: relative;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    min-height: 150px;
+}
+
+.frase-item {
+    display: none;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.frase-item.active {
+    display: block;
+}
+
+.frase-item blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.frase-item cite {
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Animações específicas para jovens */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.razao-card:hover .razao-icon {
+    animation: pulse 0.6s ease-in-out;
+}
+
+.santo-card:hover .santo-image {
+    animation: pulse 0.6s ease-in-out;
+}
+
+/* Responsividade para aba Jovens */
+@media (max-width: 768px) {
+    .jovens-hero h3 {
+        font-size: 2rem;
+    }
+    
+    .jovens-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .jovem-stat .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .razoes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .santos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .desafio-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .desafio-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .recursos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-cta {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .jovens-hero {
+        padding: 2rem 1rem;
+    }
+    
+    .jovens-hero h3 {
+        font-size: 1.8rem;
+    }
+    
+    .jovens-subtitle {
+        font-size: 1rem;
+    }
+    
+    .razao-card,
+    .santo-card,
+    .recurso-card {
+        padding: 1.5rem;
+    }
+    
+    .desafio-item {
+        padding: 1.5rem;
+    }
+    
+    .frases-carousel {
+        padding: 1.5rem;
+    }
+    
+    .frase-item blockquote {
+        font-size: 1.2rem;
+    }
+}

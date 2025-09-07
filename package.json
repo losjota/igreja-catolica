@@ -1,0 +1,31 @@
+{
+  "name": "site-igreja-catolica",
+  "version": "1.0.0",
+  "description": "Site sobre a Igreja Católica, Milagres Eucarísticos e São Carlos Acutis",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 3000",
+    "dev": "npx live-server --port=3000",
+    "build": "echo 'Projeto estático - não requer build'",
+    "deploy": "echo 'Para deploy, faça upload dos arquivos para um servidor web'"
+  },
+  "keywords": [
+    "igreja-catolica",
+    "sao-carlos-acutis",
+    "milagres-eucaristicos",
+    "jovens-catolicos",
+    "religiao",
+    "cristianismo"
+  ],
+  "author": "Desenvolvedor do Site",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "local"
+  },
+  "homepage": "./index.html"
+}
